@@ -17,27 +17,21 @@ function validateForm() {
 
     // START WITH 2 EMPTY BUCKETS
 
-    // Object to store valid data
     const data = {};
 
-    // Object to store errors
     const errors = {};
 
-    // Remove old error highlight
     clearErrorStyles();
-
 
     // FULL NAME VALIDATION
 
     const fullNameValue = fullNameInput.value.trim();
 
-    if (fullNameValue !== "") {
-        data.fullName = fullNameValue;
-    } else {
+    if (fullNameValue !== "") {data.fullName = fullNameValue;}
+    else {
         errors.fullName = "Full name is missing";
         fullNameInput.classList.add("input-error");
     }
-
 
     // EMAIL VALIDATION
 
@@ -45,9 +39,8 @@ function validateForm() {
 
     if (emailValue !== "") {
 
-        if (emailPattern.test(emailValue)) {
-            data.email = emailValue;
-        } else {
+        if (emailPattern.test(emailValue)) {data.email = emailValue;} 
+        else {
             errors.email = "Email format is invalid";
             emailInput.classList.add("input-error");
         }
@@ -81,14 +74,14 @@ function validateForm() {
 }
 
 
-// Function to clear form
+// Clear form
 function clearForm() {
     fullNameInput.value = "";
     emailInput.value = "";
     messageInput.value = "";
 }
 
-// Function to remove error styles
+// Remove error styles
 function clearErrorStyles() {
     fullNameInput.classList.remove("input-error");
     emailInput.classList.remove("input-error");
